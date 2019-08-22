@@ -60,5 +60,7 @@ class Song
 
 end
 
-
+song = Song.new(name: "ABCDE", album: "Alpha")
+song.save
+song
 
