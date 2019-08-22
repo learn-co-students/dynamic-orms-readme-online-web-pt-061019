@@ -5,7 +5,7 @@ class Song
 
 
   def self.table_name
-    self.to_s.downcase.pluralize
+    self.to_s.downcase.pluralize #Song is self and is converted into "songs"
   end
 
   def self.column_names
@@ -49,7 +49,7 @@ class Song
     values.join(", ")
   end
 
-  def col_names_for_insert
+  def col_names_for_insert #column names without the id
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
@@ -59,6 +59,3 @@ class Song
   end
 
 end
-
-
-
