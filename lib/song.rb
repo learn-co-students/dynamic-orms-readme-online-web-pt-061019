@@ -5,6 +5,7 @@ class Song
 
 
   def self.table_name
+    # grabs the table name we want to query for column names
     self.to_s.downcase.pluralize
   end
 
@@ -12,6 +13,7 @@ class Song
     DB[:conn].results_as_hash = true
 
     sql = "pragma table_info('#{table_name}')"
+    # returns an array of hashes(because results_as_hash_method)
 
     table_info = DB[:conn].execute(sql)
     column_names = []
@@ -59,6 +61,3 @@ class Song
   end
 
 end
-
-
-
